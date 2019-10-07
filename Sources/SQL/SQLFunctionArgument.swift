@@ -37,4 +37,11 @@ public enum GenericSQLFunctionArgument<Expression>: SQLFunctionArgument where Ex
         case ._expression(let expr): return expr.serialize(&binds)
         }
     }
+
+    public func isExpression() -> Bool {
+        switch self {
+            case ._expression: return true
+            default: return false
+        }
+    }
 }
